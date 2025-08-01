@@ -27,16 +27,13 @@ public class Main {
                 Scanner scanner = new Scanner(System.in);
                 ReporteService reporteService = new ReporteService(session);
 
-                // Registro de prueba de Profesor
                 session.beginTransaction();
                 Profesor nuevoProfesor = new Profesor("Dr. Roberto Jiménez", "Biología");
                 session.persist(nuevoProfesor);
                 session.getTransaction().commit();
 
-                // Mostrar todas las entidades
                 mostrarEntidades(session);
 
-                // Menú de reportes
                 boolean salir = false;
                 while (!salir) {
                     System.out.println("""
